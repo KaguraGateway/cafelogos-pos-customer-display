@@ -5,10 +5,10 @@ export function AddItem() {
   return (
     <Flex position="relative" flexDir="column" justifyContent="space-between" h="100vh">
       <Container maxW="container.md" h="calc(100% - 105px)">
-        <Flex flexDir="column" justifyContent="center" h="100%" gap="64px">
+        <Flex flexDir="column" justifyContent="center" h="100%" gap={{ base: '64px', sm: '32px' }}>
           <Box>
             <Text fontSize="6xl">ハルメリアブレンド</Text>
-            <Text fontSize="4xl">(ネル)</Text>
+            <Text fontSize="5xl">(ネル)</Text>
           </Box>
           <Flex>
             <Flex gap="32px">
