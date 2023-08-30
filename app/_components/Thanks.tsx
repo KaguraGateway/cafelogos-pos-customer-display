@@ -1,5 +1,6 @@
-import { Container, Flex, Box, Text, Table, TableContainer, Thead, Tr, Th, Tbody, Td } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
+
 import { Yen } from '@/ui/Yen';
 
 export function Thanks() {
