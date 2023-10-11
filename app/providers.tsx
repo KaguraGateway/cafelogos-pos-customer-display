@@ -4,6 +4,11 @@ import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
+  colors: {
+      regiBrown: {
+        500: '#432828',
+    },
+  },
   components: {
     Text: {
       fontSizes: {
