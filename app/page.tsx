@@ -15,7 +15,7 @@ const StateType = {
 type StateType = (typeof StateType)[keyof typeof StateType];
 
 export default function Home() {
-  const [state, setState] = useState<StateType>(StateType.thanks);
+  const [state, setState] = useState<StateType>(StateType.payment);
 
   if (state == StateType.addItem) {
     return <AddItem />;
