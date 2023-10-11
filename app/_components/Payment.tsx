@@ -1,30 +1,24 @@
-import { Yen } from '@/ui/Yen';
-import { Box, Container, Flex, Text } from '@chakra-ui/react';
-import Logo from 'public/next.svg';
+import { Flex, Spacer } from "@chakra-ui/react";
+import { ItemCard } from "./_components/ItemCard";
+import { ToTalAmountBar } from "./_components/TotalAmountBar";
+import { ChargeAmoutBar } from "./_components/ChargeAmountBar";
+import { ReturnAmountBar } from "./_components/ReturnAmountBar";
 
 export function Payment() {
-  return (
-    <Container maxW="container.md" position="absolute" top={0} bottom={0} left={0} right={0}>
-      <Flex flexDirection="column" justifyContent="center" alignItems="center" w="100%" h="100%">
-        < Logo />
-        <Flex justifyContent="space-between" w="100%">
-          <Flex flexDirection="column" justifyContent="end">
-            <Text fontSize="4xl">合計</Text>
-            <Text fontSize="5xl">4点</Text>
-          </Flex>
-          <Box>
-            <Text textAlign="center" fontSize="9xl">
-              <Yen yen={1000} />
-            </Text>
-          </Box>
+    return (
+        <>
+        <Flex flexDirection="column" alignItems={"center"} w="100%" h="100%" bg={'gray.100'} overflow={"scroll"}>
+            <ItemCard color={0} name="ロゴスブレンド〜豊穣〜" amount={400} quantity={1} />
+            <ItemCard color={1} name="茜ブレンド" amount={400} quantity={12} />
+            <ItemCard color={0} name="薄皮饅頭" amount={200} quantity={2} />
+            <ItemCard color={1} name="薄皮饅頭" amount={200} quantity={2} />
+            <ItemCard color={0} name="薄皮饅頭" amount={200} quantity={2} />
+            
         </Flex>
-        <Flex borderTop="1px" mt="8px" pt="8px" w="100%">
-          <Text fontSize="6xl">不足</Text>
-          <Text fontSize="6xl">
-            <Yen yen={1000} />
-          </Text>
+        <Flex flexDirection="column" position="fixed" bottom="0" left="0" right="0" alignItems={"center"} w="100%" bg={'gray.100'} borderTop="4px" borderColor="gray.500">
+            <ToTalAmountBar totalAmount={1200} totalQuantity={2}/>
+            <ChargeAmoutBar totalAmount={1200} recievedAmount={1500} />
         </Flex>
-      </Flex>
-    </Container>
-  );
+        </>
+    );
 }

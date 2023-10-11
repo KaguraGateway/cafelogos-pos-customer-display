@@ -8,19 +8,21 @@ import { Thanks } from './_components/Thanks';
 import { Logo } from './_components/Logo';
 import { ThanksUse } from './_components/ThanksUse';
 import { EntryList } from './_components/EntryList';
+import { Ads2 } from './_components/Ads2';
 
 const StateType = {
-  ads: 0,
-  entryList: 1,
-  payment: 2,
-  thanks: 3,
-  logo: 4,
-  thanksUse: 5,
+  logo: 0,
+  thanksUse: 1,
+  entryList: 2,
+  payment: 3,
+  thanks: 4,
+  ads: 5,
+  ads2: 6,
 } as const;
 type StateType = (typeof StateType)[keyof typeof StateType];
 
 export default function Home() {
-  const [state, setState] = useState<StateType>(StateType.entryList);
+  const [state, setState] = useState<StateType>(StateType.logo);
 
   if (state == StateType.entryList) {
     return <EntryList />;
@@ -32,6 +34,8 @@ export default function Home() {
     return <Logo />;
   } else if (state == StateType.thanksUse) {
     return <ThanksUse />;
+  } else if (state == StateType.ads2) {
+    return <Ads2 />;
   }
 
   return <Ads />;
