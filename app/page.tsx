@@ -7,10 +7,11 @@ import { Payment } from './_components/Payment';
 import { Thanks } from './_components/Thanks';
 import { Logo } from './_components/Logo';
 import { ThanksUse } from './_components/ThanksUse';
+import { EntryList } from './_components/EntryList';
 
 const StateType = {
   ads: 0,
-  addItem: 1,
+  entryList: 1,
   payment: 2,
   thanks: 3,
   logo: 4,
@@ -19,10 +20,10 @@ const StateType = {
 type StateType = (typeof StateType)[keyof typeof StateType];
 
 export default function Home() {
-  const [state, setState] = useState<StateType>(StateType.thanksUse);
+  const [state, setState] = useState<StateType>(StateType.entryList);
 
-  if (state == StateType.addItem) {
-    return <AddItem />;
+  if (state == StateType.entryList) {
+    return <EntryList />;
   } else if (state == StateType.payment) {
     return <Payment />;
   } else if (state == StateType.thanks) {
