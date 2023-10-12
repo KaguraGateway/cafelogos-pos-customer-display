@@ -4,7 +4,7 @@ import { ToTalAmountBar } from "./_components/TotalAmountBar";
 import { ChargeAmoutBar } from "./_components/ChargeAmountBar";
 import { ReturnAmountBar } from "./_components/ReturnAmountBar";
 
-export function Payment() {
+export function EntryList() {
     return (
         <>
         <Flex flexDirection="column" alignItems={"center"} w="100%" h="100%" bg={'gray.100'} overflow={"scroll"}>
@@ -17,7 +17,6 @@ export function Payment() {
         </Flex>
         <Flex flexDirection="column" position="fixed" bottom="0" left="0" right="0" alignItems={"center"} w="100%" bg={'gray.100'} borderTop="4px" borderColor="gray.500">
             <ToTalAmountBar totalAmount={1200} totalQuantity={2}/>
-            <ChargeAmoutBar totalAmount={1200} recievedAmount={1500} />
         </Flex>
         </>
     );
